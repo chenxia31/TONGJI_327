@@ -10,7 +10,7 @@
 以下是往届自定义目标的示例：
 - 统计当前帧每个车道车辆数，并实时显示。（拉取四边形代表某条车道范 围，判断该四边形内有多少各目标。）
 - 统计每条车道累计车辆数。（划定虚拟检测线 or 线圈，经过则计数。）
-- 
+
 3. 进一步讨论
 
 根据检测结果与目标，再实现过程中进一步分析。（如讨论交通量、光照、遮挡，使用的算法等影响因素对结果的影响，该部分同样纳入作业评定中。）
@@ -26,6 +26,16 @@
 /output：识别结果文件
 
 /report：分析报告（实验目标、方法、结果、讨论、参考）
+
+## 一些提示
+
+```
+wget https://pjreddie.com/media/files/yolov3.weights # 保存权重到根目录
+
+python detect.py #图片识别
+
+python video.py --video your.mp4 #视频识别
+```
   
 ## YOLO_v3_tutorial_from_scratch（原项目地址）
 Accompanying code for Paperspace tutorial series ["How to Implement YOLO v3 Object Detector from Scratch"](https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/)
