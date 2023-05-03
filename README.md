@@ -34,8 +34,10 @@ wget https://pjreddie.com/media/files/yolov3.weights # 保存权重到根目录
 
 python detect.py #图片识别
 
-python video.py --video your.mp4 #视频识别
+python video.py --video run.mp4 #视频识别
 ```
+示例代码一：对output的结果进行计数，并write到frame上
+示例代码二：判断是否在四边形区域中，可以作为虚拟线圈和车道流量识别参考
   
 ## YOLO_v3_tutorial_from_scratch（原项目地址）
 Accompanying code for Paperspace tutorial series ["How to Implement YOLO v3 Object Detector from Scratch"](https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/)

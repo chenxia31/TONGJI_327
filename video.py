@@ -143,7 +143,7 @@ while cap.isOpened():
 
         #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         # 
-        #         在这里修改你的代码
+        #         在这里修改你的代码: 比如加虚拟线圈
         #
         # output为所有识别的输出结果，通过调用write函数来绘制识别框
         # 可以参考write中一些opencv的操作
@@ -156,8 +156,8 @@ while cap.isOpened():
         for obj in output:
             print(obj[1:5])
             print('物体种类是'+classes[int(obj[-1])])
-            
-        # 示例：对output的结果进行计数，并write到frame上
+
+        # 示例代码1 ：对output的结果进行计数，并write到frame上
         # 1. 对output的结果进行计数
         # res={}
         # for i in output[:,-1]:
@@ -170,7 +170,40 @@ while cap.isOpened():
         # for i in res:
         #     cv2.putText(frame, i+':'+str(res[i]), (0, 50+offset*50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
         #     offset+=1
-        
+
+        # 示例代码2 : 判断是否在四边形区域中，可以作为虚拟线圈和车道流量识别参考
+        # def isin_poly(position,poly):
+        #     # postion是目标位置,poly是四边形的坐标,四个坐标
+        #     px,py=position
+        #     is_in=False
+        #     for i,corner in enumerate(poly):
+        #         next_i = i + 1 if i + 1 < len(poly) else 0
+        #         x1, y1 = corner
+        #         x2, y2 = poly[next_i]
+        #         if (x1 == px and y1 == py) or (x2 == px and y2 == py):  # if point is on vertex
+        #             is_in = True
+        #             break
+        #         if min(y1, y2) < py <= max(y1, y2):  # find horizontal edges of polygon
+        #             x = x1 + (py - y1) * (x2 - x1) / (y2 - y1)
+        #             if x == px:  # if point is on edge
+        #                 is_in = True
+        #                 break
+        #             elif x > px:  # if point is on left-side of line
+        #                 is_in = not is_in
+        #     return is_in    
+        # for obj in output:
+        #     # 需根据拍摄视频的道路设置线圈坐标，可设置多个虚拟线圈
+        #     # 或者确定车道四个角的坐标
+        #     # 可根据识别结果进行下一步展示和研究
+        #     poly11=[[222, 300],
+        #     [425.3901036528507, 300],
+        #     [425, 50],
+        #     [222, 50]]
+        #     x_mid=(obj[1]+obj[3])/2
+        #     y_mid=(obj[2]+obj[4])/2
+        #     print(isin_poly((x_mid,y_mid),poly11)) 
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
         cv2.imshow("frame", frame)
         key = cv2.waitKey(1)
         if key & 0xFF == ord('q'):
