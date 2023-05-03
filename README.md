@@ -17,7 +17,7 @@
 
 ## 提交形式:
 
-压缩包包含以下内容，发送至2233391@tongji.edu.cn
+压缩包包含以下内容，在5月18日24:00之前发送至2233391@tongji.edu.cn
 
 /src：可执行的源代码
 
@@ -27,14 +27,14 @@
 
 /report：分析报告（实验目标、方法、结果、讨论、参考）
   
-## YOLO_v3_tutorial_from_scratch
+## YOLO_v3_tutorial_from_scratch（原项目地址）
 Accompanying code for Paperspace tutorial series ["How to Implement YOLO v3 Object Detector from Scratch"](https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/)
 
 Here's what a typical output of the detector will look like ;)
 
-![Detection Example](https://i.imgur.com/m2jwnen.png)
+![example](https://chenxia31blog.oss-cn-hangzhou.aliyuncs.com/img/14431683079210_.pic.jpg)
 
-## About the training Code
+## One more thing: 训练你的Yolo v3
 
 This code is only mean't as a companion to the tutorial series and won't be updated. If you want to have a look at the ever updating YOLO v3 code, go to my other repo at https://github.com/ayooshkathuria/pytorch-yolo-v3
 

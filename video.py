@@ -126,9 +126,6 @@ while cap.isOpened():
                 break
             continue
         
-        
-        
-
         im_dim = im_dim.repeat(output.size(0), 1)
         scaling_factor = torch.min(416/im_dim,1)[0].view(-1,1)
         
@@ -140,14 +137,39 @@ while cap.isOpened():
         for i in range(output.shape[0]):
             output[i, [1,3]] = torch.clamp(output[i, [1,3]], 0.0, im_dim[i,0])
             output[i, [2,4]] = torch.clamp(output[i, [2,4]], 0.0, im_dim[i,1])
-    
-        
-        
 
         classes = load_classes('data/coco.names')
         colors = pkl.load(open("pallete", "rb"))
 
-        list(map(lambda x: write(x, frame), output))
+        #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        # 
+        #         在这里修改你的代码
+        #
+        # output为所有识别的输出结果，通过调用write函数来绘制识别框
+        # 可以参考write中一些opencv的操作
+        # PyTorch的Tensor基本操作：https://pytorch.org/docs/stable/tensors.html
+        # OpenCV-python对图像的基本操作：https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+        #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        list(map(lambda x: write(x, frame), output)) # 使用map和lambda函数,类似For循环操作
+
+        # 打印output,每一个列表是tensor
+        for obj in output:
+            print(obj[1:5])
+            print('物体种类是'+classes[int(obj[-1])])
+            
+        # 示例：对output的结果进行计数，并write到frame上
+        # 1. 对output的结果进行计数
+        # res={}
+        # for i in output[:,-1]:
+        #     if classes[int(i)] not in res:
+        #         res[classes[int(i)]]=1
+        #     else:
+        #         res[classes[int(i)]]=res[classes[int(i)]]+1
+        # # 2. write到frame上
+        # offset=0
+        # for i in res:
+        #     cv2.putText(frame, i+':'+str(res[i]), (0, 50+offset*50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        #     offset+=1
         
         cv2.imshow("frame", frame)
         key = cv2.waitKey(1)
