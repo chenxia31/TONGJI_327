@@ -13,7 +13,7 @@
 
 3. 进一步讨论
 
-根据检测结果与目标，再实现过程中进一步分析。（如讨论交通量、光照、遮挡，使用的算法等影响因素对结果的影响，该部分同样纳入作业评定中。）
+根据检测结果与目标，在实验结果中进一步分析。（如讨论交通量、光照、遮挡，使用的算法等影响因素对结果的影响，该部分同样纳入作业评定中。）
 
 ## 提交形式:
 
@@ -47,13 +47,8 @@ Here's what a typical output of the detector will look like ;)
 
 ![example](https://chenxia31blog.oss-cn-hangzhou.aliyuncs.com/img/14431683079210_.pic.jpg)
 
-## One more thing: 训练你的Yolo v3
-
 This code is only mean't as a companion to the tutorial series and won't be updated. If you want to have a look at the ever updating YOLO v3 code, go to my other repo at https://github.com/ayooshkathuria/pytorch-yolo-v3
-
-Also, the other repo offers a lot of customisation options, which are not present in this repo for making tutorial easier to follow. (Don't wanna confuse the shit out readers, do we?)
-
-About when is the training code coming? I have my undergraduate thesis this May, and will be busy. So, you might have to wait for a till the second part of May. 
-
+## One more thing: 训练你的Yolo v3
+如果有更进一步的希望可以训练自己的YOLOv3权重的，可以参考GitHub上的其他教程（不推荐），参考仓库：https://github.com/kikizxd/PyTorch-YOLOv3_kiki
 Cheers
 
