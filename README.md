@@ -49,6 +49,7 @@ Here's what a typical output of the detector will look like ;)
 
 This code is only mean't as a companion to the tutorial series and won't be updated. If you want to have a look at the ever updating YOLO v3 code, go to my other repo at https://github.com/ayooshkathuria/pytorch-yolo-v3
 ## One more thing: 训练你的Yolo v3
-如果有更进一步的希望可以训练自己的YOLOv3权重的，可以参考GitHub上的其他教程（不推荐），参考仓库：https://github.com/kikizxd/PyTorch-YOLOv3_kiki
+如果有更进一步的希望可以训练自己的YOLOv3权重的，可以参考GitHub上的其他教程（不推荐），参考仓库：[PyTorch-YOLOv3_kiki]https://github.com/kikizxd/PyTorch-YOLOv3_kiki
+
 Cheers
 
