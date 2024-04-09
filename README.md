@@ -39,7 +39,9 @@ python video.py --video run.mp4 #视频识别
 示例代码一(line 160)：对output的结果进行计数，并write到frame上
 
 示例代码二(line 174)：判断是否在四边形区域中，可以作为虚拟线圈和车道流量识别参考
-  
+
+<img width="538" alt="往届作业" src="https://github.com/chenxia31/TONGJI_327/assets/72689497/1d59b366-1e20-483a-87ec-f0901957d4bb">
+
 ## YOLO_v3_tutorial_from_scratch（原项目地址）
 Accompanying code for Paperspace tutorial series ["How to Implement YOLO v3 Object Detector from Scratch"](https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/)
 
